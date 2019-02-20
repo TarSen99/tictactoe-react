@@ -140,7 +140,7 @@ class App extends Component {
    return false;
   }
 
-  endGame(currentSign) {
+  endGame() {
     this.setState({
       gameOver: true,
     });
@@ -216,3 +216,4 @@ class App extends Component {
 }
 
 export default App;
+

@@ -1,4 +1,6 @@
 import React from 'react';
+import X from './../img/x-3.png';
+import O from './../img/o-3.png';
 
 export default class Cell extends React.Component{
   constructor(props) {
@@ -7,8 +9,8 @@ export default class Cell extends React.Component{
   }
 
   render() {
-    const signSourceWay = `${this.props.sign === 'X' ? '../img/x-3.png'
-      : this.props.sign === 'O' ? '../img/o-3.png'
+    const signSourceWay = `${this.props.sign === 'X' ? X
+      : this.props.sign === 'O' ? O
         : ''
     }`;
 

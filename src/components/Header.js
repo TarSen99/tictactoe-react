@@ -1,4 +1,6 @@
 import React from 'react';
+import X from './../img/x-3.png';
+import O from './../img/o-3.png';
 
 export default class Header extends React.Component{
   constructor(props) {
@@ -34,8 +36,8 @@ export default class Header extends React.Component{
 
   render() {
     const signSourceWay = `
-    ${this.props.currentSign === 'X' ? '../img/x-3.png' :
-      this.props.currentSign === 'O' ? '../img/o-3.png' :
+    ${this.props.currentSign === 'X' ? X :
+      this.props.currentSign === 'O' ? O :
         ''
       }`;
 
