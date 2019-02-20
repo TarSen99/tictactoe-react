@@ -1,3 +1,6 @@
+* # [Preview](https://tarsen99.github.io/tictactoe-react/build/)
+* # [PR](https://github.com/TarSen99/tictactoe-react/pull/1/files)
+
 ## Available Scripts
 
 In the project directory, you can run:
