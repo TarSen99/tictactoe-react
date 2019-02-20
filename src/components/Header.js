@@ -56,10 +56,22 @@ export default class Header extends React.Component{
         >
           Generate / Restart game
         </button>
-        <div className="header__text">
-          Player
-          <img src={signSourceWay} alt="" />
-          {this.props.gameOver ? 'Won!' : 'is moving'}
+        <div className="header__text-block">
+          {this.props.gameOver ?
+            this.props.wonSign ?
+              <div className="header__moves-text">
+                Player
+                <img src={signSourceWay} alt=""
+                />
+                Won!
+              </div>
+              : <span>It's a draw!</span>
+            : <div className="header__moves-text">
+              <span>Player</span>
+              <img src={signSourceWay} alt="" />
+              <span>is moving</span>
+            </div>
+          }
         </div>
       </div>
     );

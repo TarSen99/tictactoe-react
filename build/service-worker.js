@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tictactoe-react/build/precache-manifest.8db9f77f9fa544ad487236587cdf02e5.js"
+  "/tictactoe-react/build/precache-manifest.8718c7f003a43f1a23062c730b379272.js"
 );
 
 workbox.clientsClaim();

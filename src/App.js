@@ -18,8 +18,10 @@ class App extends Component {
       cells: this.getCells(InitialFieldSize),
       cellSizes:  this.getCellSizes(),
       currentSign: 'X',
+      wonSign: null,
       pointsToWin: this.getPointsToWin(InitialFieldSize),
       gameOver: false,
+      freeCells: InitialFieldSize * InitialFieldSize,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -137,12 +139,14 @@ class App extends Component {
       }
     }
 
-   return false;
+    return false;
   }
 
-  endGame() {
+  endGame(freeCells, currentSign) {
     this.setState({
       gameOver: true,
+      freeCells: freeCells,
+      wonSign: currentSign ? currentSign : null
     });
   }
 
@@ -158,6 +162,7 @@ class App extends Component {
     }
 
     const currentSign = this.state.currentSign;
+    const freeCells = this.state.freeCells - 1;
     clickedCell.sign = currentSign;
 
     let result = this.processMatches({
@@ -166,13 +171,16 @@ class App extends Component {
     }, currentSign);
 
     if(result) {
-      this.endGame(currentSign);
+      this.endGame(freeCells, currentSign);
+    } else if(freeCells === 0) {
+      this.endGame(freeCells);
     }
 
     this.setState(oldState => {
       if(!result) {
         return {
           currentSign: oldState.currentSign === 'X' ? 'O' : 'X',
+          freeCells: freeCells,
         }
       }
 
@@ -191,7 +199,9 @@ class App extends Component {
       cells: this.getCells(fieldSize),
       pointsToWin: this.getPointsToWin(fieldSize),
       currentSign: 'X',
+      wonSign: null,
       gameOver: false,
+      freeCells: fieldSize * fieldSize,
     });
   }
 
@@ -202,6 +212,8 @@ class App extends Component {
           currentSign={this.state.currentSign}
           handleSubmit={this.handleSubmit}
           gameOver={this.state.gameOver}
+          freeCells={this.state.freeCells}
+          wonSign={this.state.wonSign}
         />
 
         <Field
@@ -216,4 +228,3 @@ class App extends Component {
 }
 
 export default App;
-

@@ -23,6 +23,7 @@ body {
   margin-bottom: 20px;
   position: relative;
   top: 10px;
+  min-height: 100px;
 }
 
 .header__input {
@@ -56,15 +57,18 @@ body {
   cursor: pointer;
 }
 
-.header__text {
+.header__text-block {
   position: relative;
   top: 15px;
+}
+
+.header__moves-text {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.header__text img{
+.header__text-block img{
   width: 30px;
   margin: 10px;
 }
